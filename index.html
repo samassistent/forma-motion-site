@@ -102,7 +102,7 @@
     .header-right { display: flex; align-items: center; gap: 10px; }
     .tag {
       border: 1px solid var(--line);
-      background: #f6efe6aa;
+      background: color-mix(in srgb, var(--surface) 86%, transparent 14%);
       backdrop-filter: blur(8px);
       border-radius: 999px;
       padding: 8px 14px;
@@ -136,7 +136,7 @@
       border: 1px solid var(--line);
       border-radius: 26px;
       overflow: hidden;
-      background: linear-gradient(140deg, #f8f1e7 0%, #ecdfcf 100%);
+      background: linear-gradient(140deg, color-mix(in srgb, var(--surface) 84%, #fff 16%) 0%, var(--surface-2) 100%);
       box-shadow: var(--shadow);
     }
     .hero-copy { padding: 42px 38px; }
@@ -144,7 +144,7 @@
       display: inline-block;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: #f9f3ec;
+      background: color-mix(in srgb, var(--surface) 88%, transparent 12%);
       padding: 6px 12px;
       font-size: .72rem;
       letter-spacing: .1em;
@@ -200,7 +200,7 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       overflow: hidden;
-      background: #f8f2ea;
+      background: color-mix(in srgb, var(--surface) 92%, transparent 8%);
       box-shadow: 0 8px 18px rgba(35,25,14,.06);
       transition: transform .25s ease, box-shadow .25s ease;
     }
@@ -217,7 +217,7 @@
       margin-top: 56px;
       border: 1px solid var(--line);
       border-radius: 20px;
-      background: linear-gradient(140deg, #f5ecdf 0%, #eadecf 100%);
+      background: linear-gradient(140deg, color-mix(in srgb, var(--surface) 80%, #fff 20%) 0%, var(--surface-2) 100%);
       overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -255,7 +255,7 @@
       list-style: none;
       display: grid;
       gap: 6px;
-      color: #4e4842;
+      color: var(--muted);
       font-size: .93rem;
     }
 
