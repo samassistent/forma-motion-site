@@ -3,7 +3,7 @@
 // Mode B (fallback): localStorage list
 
 const SUPABASE_URL = "https://cyfgbvsjpwsbalrbghij.supabase.co"; // e.g. https://xxxx.supabase.co
-const SUPABASE_ANON_KEY = "sb_publishable_Cy81WEPZ4c9xLF81ZEsggA_ypMQWcuU"; // public anon key
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5ZmdidnNqcHdzYmFscmJnaGlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwNTAyNjksImV4cCI6MjA4NzYyNjI2OX0.pbj2bCauSCRRnUuM7cCFZE-BFFlhUyhEv_B25isgboA"; // public anon key
 
 const form = document.getElementById("newsletter-form");
 const emailInput = document.getElementById("email");
