@@ -7,26 +7,70 @@
   <meta name="description" content="Luxury guided movement for healthy aging. Forma Motion blends premium coaching, playful motivation, and measurable progress." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="shortcut icon" href="assets/favicon.svg" />
-  <link rel="preconnect" href="https://images.unsplash.com" />
   <style>
     :root {
-      --bg: #f6f2ec;
-      --surface: #efe7dd;
+      --bg: #ebe3d8;
+      --bg-deep: #ddd1c2;
+      --surface: #f3ece3cc;
+      --surface-2: #efe5d8;
       --text: #171717;
       --muted: #5d5751;
-      --line: #d9cdbf;
+      --line: #d2c1ad;
       --accent: #b8946a;
       --dark: #121212;
+      --shadow: 0 20px 50px rgba(37, 28, 17, .12);
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at top right, #fbf8f4 0%, var(--bg) 55%);
+      background:
+        radial-gradient(1200px 600px at 10% -5%, #f8f2ea 0%, transparent 65%),
+        radial-gradient(1000px 500px at 95% 5%, #e8dbc8 0%, transparent 60%),
+        linear-gradient(160deg, var(--bg) 0%, var(--bg-deep) 100%);
       line-height: 1.55;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
-    .container { max-width: 1160px; margin: 0 auto; padding: 28px 22px 80px; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .20;
+      background-image: radial-gradient(rgba(0,0,0,.08) .5px, transparent .5px);
+      background-size: 3px 3px;
+      z-index: 0;
+    }
+
+    .orb {
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(40px);
+      opacity: .22;
+      pointer-events: none;
+      z-index: 0;
+      animation: float 12s ease-in-out infinite;
+    }
+    .orb.one { width: 340px; height: 340px; left: -120px; top: 15%; background: #d6b58f; }
+    .orb.two { width: 280px; height: 280px; right: -90px; top: 48%; background: #c8a986; animation-delay: -4s; }
+    .orb.three { width: 220px; height: 220px; left: 40%; bottom: -80px; background: #eadbc8; animation-delay: -8s; }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-24px) translateX(10px); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 28px 22px 84px;
+    }
 
     header {
       display: flex;
@@ -34,12 +78,6 @@
       align-items: center;
       margin-bottom: 24px;
       gap: 16px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
     }
     .wordmark {
       font-family: "Times New Roman", Georgia, serif;
@@ -49,6 +87,8 @@
     }
     .tag {
       border: 1px solid var(--line);
+      background: #f6efe6aa;
+      backdrop-filter: blur(8px);
       border-radius: 999px;
       padding: 8px 14px;
       font-size: .75rem;
@@ -65,14 +105,15 @@
       border: 1px solid var(--line);
       border-radius: 26px;
       overflow: hidden;
-      background: linear-gradient(140deg, #f5eee4 0%, #ebe1d5 100%);
-      box-shadow: 0 24px 52px rgba(37, 28, 17, .08);
+      background: linear-gradient(140deg, #f8f1e7 0%, #ecdfcf 100%);
+      box-shadow: var(--shadow);
     }
     .hero-copy { padding: 42px 38px; }
     .eyebrow {
       display: inline-block;
       border: 1px solid var(--line);
       border-radius: 999px;
+      background: #f9f3ec;
       padding: 6px 12px;
       font-size: .72rem;
       letter-spacing: .1em;
@@ -89,19 +130,28 @@
     .lead { margin: 0; color: var(--muted); max-width: 46ch; font-size: 1.02rem; }
     .cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
     .btn {
+      position: relative;
+      overflow: hidden;
       text-decoration: none;
       border-radius: 999px;
       font-weight: 600;
       font-size: .95rem;
       padding: 12px 18px;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.12); }
     .btn.primary { background: var(--dark); color: #fff; }
-    .btn.secondary { border: 1px solid var(--line); color: var(--text); }
+    .btn.secondary { border: 1px solid var(--line); color: var(--text); background: #f6eee4cc; }
 
     .hero-media { min-height: 440px; }
-    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero-media img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      transform: scale(1.01);
+      transition: transform .6s ease;
+    }
+    .hero:hover .hero-media img { transform: scale(1.04); }
 
-    .section { margin-top: 54px; }
+    .section { margin-top: 56px; }
     .section h2 { margin: 0 0 8px; font-size: clamp(1.45rem, 2.3vw, 2rem); }
     .section p.intro { margin: 0; color: var(--muted); max-width: 64ch; }
 
@@ -115,9 +165,15 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       overflow: hidden;
-      background: #f9f6f1;
+      background: #f8f2ea;
+      box-shadow: 0 8px 18px rgba(35,25,14,.06);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
-    .card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px rgba(35,25,14,.12);
+    }
+    .card img { width: 100%; height: 190px; object-fit: cover; display: block; }
     .card .body { padding: 16px; }
     .card h3 { margin: 0 0 6px; font-size: 1rem; }
     .card p { margin: 0; color: var(--muted); font-size: .95rem; }
@@ -126,17 +182,16 @@
       margin-top: 56px;
       border: 1px solid var(--line);
       border-radius: 20px;
-      background: linear-gradient(140deg, #f4ece2 0%, #ece2d6 100%);
+      background: linear-gradient(140deg, #f5ecdf 0%, #eadecf 100%);
       overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
-      box-shadow: 0 20px 40px rgba(37, 28, 17, .06);
+      box-shadow: var(--shadow);
     }
     .tracking-media img {
       width: 100%;
       height: 100%;
-      min-height: 290px;
+      min-height: 300px;
       object-fit: cover;
       object-position: center;
       display: block;
@@ -174,10 +229,12 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       background: var(--surface);
-      padding: 30px 26px;
+      backdrop-filter: blur(10px);
+      padding: 32px 26px;
       text-align: center;
+      box-shadow: 0 16px 30px rgba(34,24,13,.08);
     }
-    .newsletter h3 { margin: 0 0 8px; font-size: 1.28rem; }
+    .newsletter h3 { margin: 0 0 8px; font-size: 1.35rem; }
     .newsletter p { margin: 0 0 14px; color: var(--muted); }
     form {
       display: grid;
@@ -194,6 +251,12 @@
       border-radius: 12px;
       padding: 12px 14px;
       font-size: .98rem;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    input[type="email"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(184,148,106,.18);
     }
     button {
       border: 0;
@@ -203,7 +266,9 @@
       font-weight: 600;
       padding: 12px 16px;
       cursor: pointer;
+      transition: transform .2s ease, opacity .2s ease;
     }
+    button:hover { transform: translateY(-1px); opacity: .95; }
     #newsletter-status { margin-top: 10px; color: var(--muted); font-size: .93rem; }
 
     footer {
@@ -218,6 +283,16 @@
       font-size: .9rem;
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 940px) {
       .hero { grid-template-columns: 1fr; }
       .hero-copy { padding: 30px 24px; }
@@ -227,19 +302,22 @@
       .tracking-copy { padding: 24px 20px; }
       form { grid-template-columns: 1fr; }
       .tag { display: none; }
+      .orb { display: none; }
     }
   </style>
 </head>
 <body>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+
   <div class="container">
-    <header>
-      <div class="brand">
-        <div class="wordmark">Forma Motion</div>
-      </div>
+    <header class="reveal">
+      <div class="wordmark">Forma Motion</div>
       <div class="tag">Luxury Longevity Movement</div>
     </header>
 
-    <section class="hero">
+    <section class="hero reveal">
       <div class="hero-copy">
         <span class="eyebrow">Forma Motion</span>
         <h1>Move beautifully.<br/>Age powerfully.</h1>
@@ -256,7 +334,7 @@
       </div>
     </section>
 
-    <section id="purpose" class="section">
+    <section id="purpose" class="section reveal">
       <h2>Why Forma Motion</h2>
       <p class="intro">We help adults stay strong, mobile, and energized through guided sessions that feel elegant, motivating, and sustainable — not noisy fitness chaos.</p>
       <div class="cards">
@@ -284,7 +362,7 @@
       </div>
     </section>
 
-    <section class="tracking" id="tracking">
+    <section class="tracking reveal" id="tracking">
       <div class="tracking-media">
         <img src="assets/sensor-pack.jpg" alt="Forma Motion next-generation sensor pack" />
       </div>
@@ -302,7 +380,7 @@
       </div>
     </section>
 
-    <section id="newsletter" class="newsletter">
+    <section id="newsletter" class="newsletter reveal">
       <h3>Get launch updates</h3>
       <p>Join the Forma Motion newsletter. You’ll get product updates, pilot access, and first invites.</p>
       <form id="newsletter-form">
@@ -312,12 +390,20 @@
       <div id="newsletter-status">We store subscribers in a ready database integration (Supabase) or local fallback until connected.</div>
     </section>
 
-    <footer>
+    <footer class="reveal">
       <span>© 2026 Forma Motion</span>
       <span>Created by Sam · Premium movement for longevity</span>
     </footer>
   </div>
 
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('in');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+  </script>
   <script src="./newsletter.js"></script>
 </body>
 </html>
