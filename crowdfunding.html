@@ -35,22 +35,22 @@
       background:linear-gradient(160deg,var(--bg),var(--bg-deep));
       min-height:100vh;
     }
-    .container{max-width:980px;margin:0 auto;padding:30px 22px 70px}
-    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+    .container{max-width:1040px;margin:0 auto;padding:42px 24px 90px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}
     .brand{font-family:Didot,"Bodoni MT","Times New Roman",serif;font-size:1.8rem}
     .toggle{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;padding:8px 12px;cursor:pointer}
     .hero{
       border:1px solid var(--line);
       border-radius:20px;
       background:var(--surface);
-      padding:30px 24px;
-      margin-bottom:20px;
+      padding:42px 34px;
+      margin-bottom:24px;
     }
     h1{margin:0 0 8px;font-size:clamp(1.7rem,4vw,2.6rem)}
     .accent{color:var(--accent)}
     p{color:var(--muted);margin:0 0 14px}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    .card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:18px}
+    .grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:26px}
     .progress-wrap{margin:14px 0 8px}
     .progress-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px;font-size:.95rem}
     .bar{height:12px;border-radius:999px;background:color-mix(in srgb, var(--line) 55%, transparent 45%);overflow:hidden;border:1px solid var(--line)}
@@ -60,12 +60,19 @@
     .btn.primary{background:var(--dark);color:var(--bg)}
     .btn.secondary{color:var(--text);background:transparent}
     .row{display:flex;gap:10px;flex-wrap:wrap}
-    .note{font-size:.86rem;color:var(--muted)}
-    .levels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
-    .lvl{border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;background:color-mix(in srgb, var(--surface) 92%, transparent 8%)}
-    .lvl strong{display:block;font-size:1.15rem}
-    footer{margin-top:24px;color:var(--muted);font-size:.9rem}
-    @media (max-width:860px){.grid,.levels{grid-template-columns:1fr}}
+    .note{font-size:.9rem;color:var(--muted)}
+    .where-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .where{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px;
+      background:color-mix(in srgb, var(--surface) 92%, transparent 8%);
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .where strong{display:block;color:var(--text);font-size:1rem;margin-bottom:4px}
+    footer{margin-top:30px;color:var(--muted);font-size:.9rem}
+    @media (max-width:860px){.grid,.where-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -77,7 +84,7 @@
 
     <section class="hero">
       <h1>Crowdfunding the future of movement <span class="accent">for healthy aging</span>.</h1>
-      <p>Funding product development, pilot testing, and first hardware prototypes.</p>
+      <p>Funding product development, pilot testing, and first hardware prototypes. This campaign is for people who want to help shape Forma Motion from day one.</p>
       <div class="row">
         <a class="btn primary" href="index.html">← Back to Website</a>
       </div>
@@ -86,6 +93,7 @@
     <section class="grid">
       <article class="card">
         <h3>Crowdfunding via Stripe</h3>
+        <p>Every contribution moves Forma Motion from concept to a real product in homes.</p>
 
         <div class="progress-wrap">
           <div class="progress-head">
@@ -100,6 +108,21 @@
         <div class="row">
           <a class="btn primary" href="https://buy.stripe.com/test_eVq7sEcHUdlV1v5etQejK00" id="fiat-link" target="_blank" rel="noopener">Back this project</a>
         </div>
+      </article>
+
+      <article class="card">
+        <h3>Where your money goes</h3>
+        <div class="where-grid">
+          <div class="where"><strong>Product Development</strong>App experience, coaching logic, and quality UX polish.</div>
+          <div class="where"><strong>Sensor Prototypes</strong>First hardware iterations, testing, and reliability improvements.</div>
+          <div class="where"><strong>Pilot Program</strong>Real-user onboarding, feedback loops, and trainer integration.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Founder’s Edition</h3>
+        <p>Early supporters get priority access to the <strong>Founder’s Edition</strong> and recognition as first backers.</p>
+        <p class="note">For the first limited group, we include <strong>lifetime subscription access</strong> as a thank-you for believing early.</p>
       </article>
     </section>
 
