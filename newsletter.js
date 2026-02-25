@@ -2,8 +2,8 @@
 // Mode A (recommended): Supabase database
 // Mode B (fallback): localStorage list
 
-const SUPABASE_URL = ""; // e.g. https://xxxx.supabase.co
-const SUPABASE_ANON_KEY = ""; // public anon key
+const SUPABASE_URL = "https://cyfgbvsjpwsbalrbghij.supabase.co"; // e.g. https://xxxx.supabase.co
+const SUPABASE_ANON_KEY = "sb_publishable_Cy81WEPZ4c9xLF81ZEsggA_ypMQWcuU"; // public anon key
 
 const form = document.getElementById("newsletter-form");
 const emailInput = document.getElementById("email");
