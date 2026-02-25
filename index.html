@@ -1,126 +1,261 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forma Motion — Move beautifully. Age powerfully.</title>
-  <meta name="description" content="Forma Motion verbindet geführtes Premium-Coaching, spielerische Motivation und smarte Progression für gesundes, starkes Altern." />
+  <meta name="description" content="Luxury guided movement for healthy aging. Forma Motion blends premium coaching, playful motivation, and measurable progress." />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <style>
-    :root{
-      --bg:#f5f1ec;
-      --card:#efe9e2;
-      --text:#181818;
-      --muted:#5b544d;
-      --accent:#b49267;
-      --line:#d8cec4;
+    :root {
+      --bg: #f6f2ec;
+      --surface: #efe7dd;
+      --text: #171717;
+      --muted: #5d5751;
+      --line: #d9cdbf;
+      --accent: #b8946a;
+      --dark: #121212;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.5;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top right, #fbf8f4 0%, var(--bg) 55%);
+      line-height: 1.55;
     }
-    .wrap{max-width:1160px;margin:0 auto;padding:28px 22px 80px}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-    .logo{height:36px;width:auto;opacity:.95}
-    .pill{border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .container { max-width: 1160px; margin: 0 auto; padding: 28px 22px 80px; }
 
-    .hero{
-      display:grid;
-      grid-template-columns:1.1fr 1fr;
-      gap:34px;
-      align-items:center;
-      background:linear-gradient(145deg,#f4eee7,#ece3d9);
-      border:1px solid var(--line);
-      border-radius:26px;
-      overflow:hidden;
-      box-shadow:0 30px 60px rgba(42,28,13,.08);
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 16px;
     }
-    .hero-copy{padding:46px 42px}
-    h1{
-      margin:8px 0 14px;
-      font-size:clamp(2rem,4vw,3.4rem);
-      line-height:1.08;
-      letter-spacing:-.03em;
-      font-weight:600;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
     }
-    .sub{font-size:1.05rem;color:var(--muted);max-width:46ch}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .btn{padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem}
-    .btn.main{background:var(--text);color:#fff}
-    .btn.alt{border:1px solid var(--line);color:var(--text)}
-
-    .hero-img{height:100%;min-height:420px;background:#ddd}
-    .hero-img img{width:100%;height:100%;object-fit:cover}
-
-    .section{margin-top:52px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:20px;
+    .brand img {
+      height: 44px;
+      width: auto;
+      border-radius: 8px;
+      background: #f3ece3;
+      border: 1px solid var(--line);
+      padding: 4px 10px;
     }
-    .card h3{margin:0 0 8px;font-size:1.05rem}
-    .card p{margin:0;color:var(--muted);font-size:.96rem}
+    .wordmark {
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: clamp(1.3rem, 2vw, 1.75rem);
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: .75rem;
+      color: var(--muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-    footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 30px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      overflow: hidden;
+      background: linear-gradient(140deg, #f5eee4 0%, #ebe1d5 100%);
+      box-shadow: 0 24px 52px rgba(37, 28, 17, .08);
+    }
+    .hero-copy { padding: 42px 38px; }
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 14px 0 12px;
+      font-size: clamp(2rem, 4.2vw, 3.5rem);
+      line-height: 1.06;
+      letter-spacing: -.025em;
+      font-weight: 620;
+    }
+    .lead { margin: 0; color: var(--muted); max-width: 46ch; font-size: 1.02rem; }
+    .cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: 12px 18px;
+    }
+    .btn.primary { background: var(--dark); color: #fff; }
+    .btn.secondary { border: 1px solid var(--line); color: var(--text); }
 
-    @media (max-width: 940px){
-      .hero{grid-template-columns:1fr}
-      .hero-copy{padding:34px 26px}
-      .hero-img{min-height:280px}
-      .grid{grid-template-columns:1fr}
+    .hero-media { min-height: 440px; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+    .section { margin-top: 54px; }
+    .section h2 { margin: 0 0 8px; font-size: clamp(1.45rem, 2.3vw, 2rem); }
+    .section p.intro { margin: 0; color: var(--muted); max-width: 64ch; }
+
+    .cards {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f9f6f1;
+    }
+    .card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .card .body { padding: 16px; }
+    .card h3 { margin: 0 0 6px; font-size: 1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    .newsletter {
+      margin-top: 56px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+      padding: 26px;
+    }
+    .newsletter h3 { margin: 0 0 8px; font-size: 1.28rem; }
+    .newsletter p { margin: 0 0 14px; color: var(--muted); }
+    form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      max-width: 560px;
+    }
+    input[type="email"] {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: .98rem;
+    }
+    button {
+      border: 0;
+      border-radius: 12px;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    #newsletter-status { margin-top: 10px; color: var(--muted); font-size: .93rem; }
+
+    footer {
+      margin-top: 54px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 940px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 30px 24px; }
+      .hero-media { min-height: 280px; }
+      .cards { grid-template-columns: 1fr; }
+      form { grid-template-columns: 1fr; }
+      .tag { display: none; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
     <header>
-      <img class="logo" src="assets/logo.png" alt="Forma Motion" />
-      <div class="pill">Premium Longevity Fitness</div>
+      <div class="brand">
+        <img src="assets/logo.png" alt="Forma Motion logo" />
+        <div class="wordmark">Forma Motion</div>
+      </div>
+      <div class="tag">Luxury Longevity Movement</div>
     </header>
 
     <section class="hero">
       <div class="hero-copy">
-        <div class="pill">Forma Motion</div>
+        <span class="eyebrow">Forma Motion</span>
         <h1>Move beautifully.<br/>Age powerfully.</h1>
-        <p class="sub">
-          Forma Motion vereint geführte Premium-Workouts, spielerische Motivation und smarte Progression — für ein starkes, gesundes Leben mit Stil.
+        <p class="lead">
+          Premium guided movement at home. We combine the efficiency of personal coaching, the joy of motion gaming, and long-term health progress in one elegant system.
         </p>
         <div class="cta">
-          <a class="btn main" href="#">Early Access</a>
-          <a class="btn alt" href="#sinn">Unser Sinn</a>
+          <a class="btn primary" href="#newsletter">Join Early Access</a>
+          <a class="btn secondary" href="#purpose">Our Purpose</a>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="assets/hero.png" alt="Forma Motion Training zuhause" />
+      <div class="hero-media">
+        <img src="assets/hero.png" alt="Adult woman training with Forma Motion devices in a premium living room" />
       </div>
     </section>
 
-    <section id="sinn" class="section">
-      <div class="grid">
+    <section id="purpose" class="section">
+      <h2>Why Forma Motion</h2>
+      <p class="intro">We help adults stay strong, mobile, and energized through guided sessions that feel elegant, motivating, and sustainable — not noisy fitness chaos.</p>
+      <div class="cards">
         <article class="card">
-          <h3>Sinn</h3>
-          <p>Gesundes Altern darf sich nicht wie Pflicht anfühlen. Wir machen Bewegung wirksam, elegant und alltagstauglich.</p>
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80" alt="Guided premium coaching" />
+          <div class="body">
+            <h3>Guided Like a Personal Coach</h3>
+            <p>Structured sessions with clear instruction, progressive plans, and coaching quality at home.</p>
+          </div>
         </article>
         <article class="card">
-          <h3>Wie</h3>
-          <p>Geführte Sessions wie Personal Coaching, kombiniert mit sanfter Gamification und messbarer Entwicklung.</p>
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80" alt="Playful movement and motivation" />
+          <div class="body">
+            <h3>Playful, Not Childish</h3>
+            <p>Subtle game mechanics that improve consistency and make movement enjoyable without losing sophistication.</p>
+          </div>
         </article>
         <article class="card">
-          <h3>Für wen</h3>
-          <p>Für Erwachsene, die Qualität wollen: mehr Mobilität, Kraft und Energie — ohne laute Fitness-Apps.</p>
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80" alt="Healthy aging and longevity" />
+          <div class="body">
+            <h3>Built for Healthy Aging</h3>
+            <p>Pilates-inspired movement, mobility, and strength designed for long-term health and vitality.</p>
+          </div>
         </article>
       </div>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+      <h3>Get launch updates</h3>
+      <p>Join the Forma Motion newsletter. You’ll get product updates, pilot access, and first invites.</p>
+      <form id="newsletter-form">
+        <input id="email" type="email" required placeholder="you@example.com" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div id="newsletter-status">We store subscribers in a ready database integration (Supabase) or local fallback until connected.</div>
     </section>
 
     <footer>
       <span>© 2026 Forma Motion</span>
-      <span>Created by Sam</span>
+      <span>Created by Sam · Premium movement for longevity</span>
     </footer>
   </div>
+
+  <script src="./newsletter.js"></script>
 </body>
 </html>
